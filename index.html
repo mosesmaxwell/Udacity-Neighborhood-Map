@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Neighborhood Map | Moses Maxwell</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/knockout-3.4.2.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="row border border-primary border-top-0 border-left-0 border-right-0 mb-3">
+                <div class="col-1">
+                    <nav id="sidebar">
+                        <div id="navbarSupportedContent" class="sidenav">
+                            <button type="button" id="close" class="close btn btn-lg" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" data-bind="value: query, valueUpdate: 'keyup'" autofocus>
+                            <h5 class="mt-3">Listed Places</h5>
+                            <ul data-bind="foreach: search" class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bind="text: title, click: openInfowindow"></a>
+                                </li>
+                            </ul>
+                            <script type="text/html" id="location">
+                                <li class="location-item" data-bind="text: title, click: openInfowindow"></li>
+                            </script>
+                        </div>
+                        <button type="button" class="btn btn-outline-dark mt-3" id="open">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </button>
+                    </nav>
+                </div>
+                <div class="col-11">
+                    <h1 class="text-uppercase brand-color-title">
+                        Neighborhood Map
+                    </h1>
+                    <h5 class="text-uppercase brand-color-subtitle">Powered by Google Maps API</h5>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div id="map"></div>
+        </div>
+    </div>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtqZFhNSb5mVv5zflRZLxVue6XGObS2lM&v=3&callback=initMap"></script>
+</body>
+
+</html>
