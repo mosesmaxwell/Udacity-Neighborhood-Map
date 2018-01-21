@@ -85,6 +85,9 @@ function initMap() {
             } else {
                 self.marker.setAnimation(google.maps.Animation.BOUNCE);
             }
+            setTimeout(() => {
+                self.marker.setAnimation(null);
+            }, 2000);
         };
 
 
@@ -136,13 +139,6 @@ function initMap() {
         locations: places,
         query: ko.observable('')
     };
-
-    venues.listedPlaces = ko.computed(function () {
-        var self = this;
-        return ko.utils.arrayFilter(self.locations, function (location) {
-            return location.title.toLowerCase();
-        });
-    }, venues);
 
     venues.search = ko.computed(function () {
         var self = this;
