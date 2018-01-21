@@ -44,7 +44,7 @@ function initMap() {
                     self.tips = '<h5 class="text-uppercase brand-color-title">' + self.title + '</h5>' + '<h5 class="text-uppercase brand-color-subtitle">Popular Tips</h5>';
                     self.tips += '<ul class="list-group list-group-flush">' + popularTips.join('') + '</ul>';
                 }).fail(function () {
-                    self.tips = '<h5 class="text-uppercase brand-color-title">' + self.title + '</h5><h5 class="text-uppercase text-danger">Error! Something went wrong!</h5>';
+                    self.tips = '<h5 class="text-uppercase brand-color-title">' + self.title + '</h5><h5 class="text-uppercase text-danger">Error! Failed to fetch details from Foursquare!</h5>';
                 });
         }();
 
